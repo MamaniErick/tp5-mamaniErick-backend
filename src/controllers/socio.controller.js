@@ -1,7 +1,6 @@
 const Socio = require("../models/socio.model");
 const socioCtrl = {};
 
-// GET todos los socios
 socioCtrl.getSocios = async (req, res) => {
   try {
     const socios = await Socio.findAll();
@@ -11,7 +10,6 @@ socioCtrl.getSocios = async (req, res) => {
   }
 };
 
-// GET socios ACTIVOS solamente
 socioCtrl.getSociosActivos = async (req, res) => {
   try {
     const socios = await Socio.findAll({ where: { activo: true } });
@@ -23,7 +21,6 @@ socioCtrl.getSociosActivos = async (req, res) => {
   }
 };
 
-// GET un socio por ID
 socioCtrl.getSocio = async (req, res) => {
   try {
     const socio = await Socio.findByPk(req.params.id);
@@ -36,7 +33,6 @@ socioCtrl.getSocio = async (req, res) => {
   }
 };
 
-// POST crear un socio
 socioCtrl.createSocio = async (req, res) => {
   try {
     await Socio.create(req.body);
@@ -46,7 +42,6 @@ socioCtrl.createSocio = async (req, res) => {
   }
 };
 
-// PUT modificar un socio
 socioCtrl.editSocio = async (req, res) => {
   try {
     await Socio.update(req.body, {
@@ -60,7 +55,6 @@ socioCtrl.editSocio = async (req, res) => {
   }
 };
 
-// DELETE eliminar un socio
 socioCtrl.deleteSocio = async (req, res) => {
   try {
     await Socio.destroy({

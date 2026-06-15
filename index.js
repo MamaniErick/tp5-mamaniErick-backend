@@ -5,10 +5,16 @@ var app = express();
 //middlewares
 app.use(express.json());
 app.use(cors({ origin: "http://localhost:4200" }));
-//Cargamos el modulo de direccionamiento de rutas
+
+//Primer Punto
 app.use("/api/socio", require("./src/routes/socio.route"));
 
+//Segundo Punto
 app.use("/api/transaccion", require("./src/routes/transaccion.route"));
+
+//Tercer Punto
+app.use("/api/empleado", require("./src/routes/empleado.route"));
+app.use("/api/publicacion", require("./src/routes/publicacion.route"));
 // app.use("/api/sector", require("./src/routes/sector.route"));
 //setting
 app.set("port", process.env.PORT || 3000);
