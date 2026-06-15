@@ -4,9 +4,9 @@ const empleadoCtrl = {};
 empleadoCtrl.createEmpleado = async (req, res) => {
   try {
     await Empleado.create(req.body);
-    res.status(201).json({ status: "1", msg: "Empleado guardado con éxito." });
+    res.status(201).json({ status: "1", msg: "Empleado creado con éxito." });
   } catch (error) {
-    res.status(400).json({ status: "0", msg: "Error al crear empleado.", error: error.message });
+    res.status(400).json({ status: "0", msg: "Error al crear al empleado.", error: error.message });
   }
 };
 

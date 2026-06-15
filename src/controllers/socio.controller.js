@@ -45,7 +45,7 @@ socioCtrl.createSocio = async (req, res) => {
 socioCtrl.editSocio = async (req, res) => {
   try {
     await Socio.update(req.body, {
-      where: { id: req.params.id }, // usa el id de la URL, más seguro
+      where: { id: req.params.id },
     });
     res.json({ status: "1", msg: "Socio actualizado." });
   } catch (error) {

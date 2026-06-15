@@ -9,7 +9,7 @@ const Publicacion = sequelize.define(
     contenido: { type: DataTypes.TEXT, allowNull: false },
     imagenAsociada: { type: DataTypes.TEXT, allowNull: true }, 
     fechaPublicacion: { type: DataTypes.STRING, allowNull: false },
-    vigente: { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: true } // <-- AGREGÁ ESTA LÍNEA
+    vigente: { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: true } 
   },
   {
     tableName: "publicaciones",

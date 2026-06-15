@@ -10,7 +10,7 @@ publicacionCtrl.createPublicacion = async (req, res) => {
       data.empleadoId = data.empleado.id;
     }
     await Publicacion.create(data);
-    res.status(201).json({ status: "1", msg: "Publicación guardada." });
+    res.status(201).json({ status: "1", msg: "Publicación creada con éxito." });
   } catch (error) {
     res.status(400).json({ status: "0", msg: "Error al guardar publicación.", error: error.message });
   }
@@ -19,7 +19,7 @@ publicacionCtrl.createPublicacion = async (req, res) => {
 publicacionCtrl.getPublicaciones = async (req, res) => {
   try {
     const publicaciones = await Publicacion.findAll({
-      include: [{ model: Empleado, as: "empleado" }] // Hace el JOIN automático
+      include: [{ model: Empleado, as: "empleado" }]
     });
     res.json(publicaciones);
   } catch (error) {
